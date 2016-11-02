@@ -47,7 +47,7 @@ $(document).ready(function() {
     
     if (pressed && btnID != "." && btnID != "+/-") pressed.css("background", "#545454");
     
-    if (/[+*/\-]/.test(btnID)) {
+    if (/^[+*/\-]{1}&/.test(btnID)) {
       $(this).css("background", "#333");
       pressed = $(this);
       

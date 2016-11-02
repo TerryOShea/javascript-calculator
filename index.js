@@ -47,7 +47,7 @@ $(document).ready(function() {
     
     if (pressed && btnID != "." && btnID != "+/-") pressed.css("background", "#545454");
     
-    if (/^[+*/\-]{1}&/.test(btnID)) {
+    if (/^[+*/\-]{1}$/.test(btnID)) {
       $(this).css("background", "#333");
       pressed = $(this);
       
@@ -78,7 +78,7 @@ $(document).ready(function() {
     
     else if (btnID == "+/-") {
       let curr = screen.html();
-      if (curr != "0") screen.html((curr.indexOf("-") == -1) ? "-" + curr : curr.substr(1));
+      if (curr != "0" && curr.length < 11) screen.html((curr.indexOf("-") == -1) ? "-" + curr : curr.substr(1));
     }
     
     else if (btnID == "ac") clearall();
